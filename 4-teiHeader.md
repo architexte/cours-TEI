@@ -60,6 +60,13 @@ La documentation d’une telle implémentation peut nous guider dans la définit
 * `dc:subject` : obligatoire ? xpath ? datatype ?
 * `dc:title` : obligatoire ? xpath ? datatype ?
 
+### Exercice. Définir les métadonnées utiles pour l’édition du *Misanthrope*
+* Quels sont les champs Duclin Core à retenir pour notre édition ?
+* Quelles sont leurs valeurs respectives ?
+* Comment exprimer ces champs en TEI (*mapping DC/TEI*) ?
+
+TODO: Correction
+
 On pourrait explorer avec profit d’autres mapping (Unimarc ? Onix ?)
 
 ## Reprise

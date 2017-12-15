@@ -1,4 +1,4 @@
-Text Encoding Initiative – introduction
+*Text Encoding Initiative* – introduction
 ===
 
 # Partager des balises, échanger des fichiers
@@ -48,7 +48,7 @@ Fondation interdisciplinaire à but non lucratif, financée par ses membres
 La TEI P5 comporte des centaines d’éléments [(569)](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html), regroupés en [modules](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA).  
 Chaque module est documenté par un chapitre des *Guidelines*.
 
-** 4 modules sont obligatoires** (communs à tous les documents TEI) :
+**4 modules sont obligatoires** (communs à tous les documents TEI) :
 * `tei` : [1 The TEI Infrastructure](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ST.html) (définition des classes, macros et types de données)
 * `header` : [2 The TEI Header](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/HD.html) (métadonnées communes)
 * `core` : [3 Elements Available in All TEI Documents](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/CO.html)
@@ -101,6 +101,10 @@ Mais plutôt un *framework*, utile à la conception de son propre schéma.
 Il est fortement déconseillé d’utiliser un schéma englobant l’intégralité de la TEI : une phase importante d’un projet est la conception d’un modèle adapté aux données et au projet, à l’exploitation des documents.
 
 Documenter pour rendre ces choix lisibles et réexploitables par un groupe plus large ou d’autres chercheurs.
+
+# Exercice. Documentation
+* Repérer la documentation sur l’encodage des textes dramatiques (théâtre).
+* Identifier (lister) les éléments et attributs utiles pour l’encodage de notre première page du *Misanthrope*.
 
 # TEI, un format pivot pour les éditions académiques ?
 TODO
