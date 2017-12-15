@@ -103,10 +103,13 @@ Il est fortement déconseillé d’utiliser un schéma englobant l’intégr
 Documenter pour rendre ces choix lisibles et réexploitables par un groupe plus large ou d’autres chercheurs.
 
 # Exercice. Documentation
-* Repérer la documentation sur l’encodage des textes dramatiques (théâtre).
-* Identifier (lister) les éléments et attributs utiles pour l’encodage de notre première page du *Misanthrope*.
+* Repérer dans les [*Guidelines*](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/index.html) la documentation sur l’encodage des textes dramatiques (théâtre).
+* Identifier (lister) les éléments et attributs TEI utiles pour l’encodage de notre première page du *Misanthrope*.
+* Convertir notre fichier [misanthrope.xml](./docs/misanthrope.xml) en TEI ([misanthrope-tei.xml](./docs/misanthrope-tei.xml)) (remplacer nos balises "maison" par les balises TEI et **veiller à la validité** du fichier produit).
+* **Bonus 1.** Reprendre notre [première DTD](https://github.com/editions/cours-TEI/blob/master/2-xml-regles.md#exercice-3-correction) pour construire le schéma TEI et valider [misanthrope-tei.xml](./docs/misanthrope-tei.xml).
+* **Bonus 2.** Exprimer en TEI (dans le `teiHeader`) quelques métadonnées : 1. titre de l’œuvre, 2. auteur de l’œuvre, 3. date de création de l’œuvre, 4. auteur de l’encodage, 4. licence, 5. identifiant du fichier TEI.
 
-**Corrigé** : Documentation in [3.12.1 Core Tags for Verse 3](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/CO.html#CODV), [7 Performance Texts](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html), [Verse](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/VE.html)
+**[Début du] Corrigé – à compléter avec les élèves** : Documentation in [3.12.1 Core Tags for Verse 3](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/CO.html#CODV), [7 Performance Texts](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html), [Verse](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/VE.html)
 * `<piece>` => [`<>`]()
 * `<acte>` => [`<>`]()
 * `<scene>` => [`<>`]()
