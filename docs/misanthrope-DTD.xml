@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE piece [
-  <!ELEMENT piece (titre, acte+)><!-- Une pièce contient un titre puis des actes. -->
-  <!ATTLIST piece xml:lang CDATA #REQUIRED><!-- Une pièce a un attribut langue. -->
-  <!ELEMENT acte (titre, scene+)><!-- Un acte contient un titre puis des scènes. -->
-  <!ELEMENT scene (titre, casting, (tourDeParole, vers+)+)><!-- Une scène contient d’abord un titre, puis un casting, suivis de plusieurs groupes composés d’un tourDeParole suivi d’un ou plusieurs vers. -->
-  <!ELEMENT titre (#PCDATA)><!-- Du texte (Parsed Character Data). -->
-  <!ELEMENT casting (#PCDATA)><!-- Du texte. -->
-  <!ELEMENT tourDeParole (#PCDATA | didascalie)*><!-- Du texte mêlé éventuellement avec une didascalie. -->
-  <!ELEMENT didascalie (#PCDATA)><!-- Du texte. -->
-  <!ELEMENT vers (#PCDATA)><!-- Du texte -->
-  <!ATTLIST vers aligner (droite|centre) #IMPLIED><!-- Décrire éventuellement l’alignement. -->
+  <!ELEMENT piece (titre, acte+)>
+  <!ATTLIST piece xml:lang CDATA #REQUIRED>
+  <!ELEMENT acte (titre, scene+)>
+  <!ELEMENT scene (titre, casting, (tourDeParole, vers+)+)>
+  <!ELEMENT titre (#PCDATA)>
+  <!ELEMENT casting (#PCDATA)>
+  <!ELEMENT tourDeParole (#PCDATA | didascalie)*>
+  <!ELEMENT didascalie (#PCDATA)>
+  <!ELEMENT vers (#PCDATA)>
+  <!ATTLIST vers aligner (droite|centre) #IMPLIED>
 ]>
 <piece xml:lang="fr">
   <titre>LE MISANTHROPE.</titre>

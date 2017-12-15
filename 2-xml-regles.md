@@ -9,11 +9,10 @@ Installer les packages (`Preferences… > Install > Install Packages`) :
 
 # eXtensible Markup Language
 * [X**ML**](https://fr.wikipedia.org/wiki/Extensible_Markup_Language) : **Markup Language**, XML est un langage à balises.
-* **X**ML : XML est **eXtensible**  
-→ permet de définir différents “espaces de noms” (***namespace***)
+* **X**ML : XML est **eXtensible** → permet de définir différents “espaces de noms” (***namespace***).
 * XML ne propose pas un jeu prédéfini et fermé de balises, mais des règles sur ce
 que doit être un document **bien formé** et **valide**.
-* Objectifs : faciliter l’échange de contenus
+* Objectifs : faciliter l’échange de contenus.
 * Principes :
   * la structure d’un document XML est définie et validable par un **schéma** ;
   * un document XML est transformable en un autre document XML.
@@ -108,7 +107,7 @@ Un document XML représente syntaxiquement un arbre.
 
 ## <span style="color:orange">Exercice 1. Écrire un premier document XML</span>
 > Baliser cette première page du *Misanthrope*
-> * Lister les éléments et les attributs utiles pour encoder le début de cette scène ?  
+> * Lister les éléments et les attributs utiles pour encoder le début de cette scène.  
 > **NB.** Nous faisons le **choix de représenter la structure sémantique** (acte, scène, etc.) plutôt que la structure matérielle de la page (marge, espacement, lignes de séparation, etc.).
 > * Enrichir la transcription texte brut ([misanthrope.txt](./docs/misanthrope.txt)) avec les balises définies pour contruire le fichier XML.  
 > **NB.** N’oubliez pas la déclaration XML en tête de fichier.  
@@ -173,14 +172,14 @@ Langages de schéma
 * XML Schéma (XSD), Schematron, ODD...
 
 ## <span style="color:orange">Exercice 3. Schéma et validité XML</span>
-> * Pour chaque élément retenu pour la transcription du *Misanthrope*, définir en une petite phrase les règles d’imbrications avec les autres éléments.
+> * Pour chaque élément retenu pour la transcription du *Misanthrope*, définir en une petite phrase les règles d’imbrication avec les autres éléments.
 > * Formaliser une DTD.
 
 ### Exercice 3. Correction
-** Définition du schéma (documentation)**
+**Définition du schéma (documentation)**
 * `piece` : élément racine ; une `piece` contient d’**abord** ***un*** `titre` **puis** ***des*** `acte`(s).
 * `acte` : un `acte` contient d’**abord** ***un*** `titre` **puis** ***des*** `scene`(s).
-* `scene` : une `scene` contient d’**abord** ***un*** `titre`, **puis** ***un*** `casting`, **suivis** de ***plusieurs groupes*** composés d’un `tourDeParole` suivi d’un ou plusieurs `vers`.
+* `scene` : une `scene` contient d’**abord** ***un*** `titre`, **puis** ***un*** `casting`, **suivis** de ***plusieurs groupes*** composés (d’***un*** `tourDeParole` **puis** ***un ou plusieurs*** `vers`).
 * `titre` : du texte.
 * `casting` : du texte.
 * `tourDeParole` : du texte **mêlé** ***éventuellement avec une*** `didascalie`.
@@ -188,7 +187,7 @@ Langages de schéma
 * `vers` : `@aligner`, du texte.
 * `@aligner`: décrire éventuellement l’alignement.
 
-** Définition du schéma (DTD)**
+**Définition du schéma (DTD)**
 ```dtd
 <!DOCTYPE piece [
   <!ELEMENT piece (titre, acte+)><!-- Une pièce contient un titre puis des actes. -->
@@ -205,7 +204,7 @@ Langages de schéma
 ```
 ## <span style="color:orange">Exercice 4. Validité XML</span>
 > * Copier/coller cette DTD en tête du fichier `misanthrope.xml` ([misanthrope-DTD.xml](./docs/misanthrope-DTD.xml)).
-> * Faire des erreurs de schémé (modifier le nom d’un élément, placer un `titre` là où ce n’est pas prévu, etc.).
+> * Faire des erreurs de schéma (modifier le nom d’un élément, placer un `titre` là où ce n’est pas prévu, etc.).
 > * **Lire les message d’erreur** de `Jing` (`Linter`) et…
 > * **…comprendre ce qu’est un fichier valide.**
 > * Ajouter une scène, un acte : quels bénéfices tirons-nous de la validation ?
