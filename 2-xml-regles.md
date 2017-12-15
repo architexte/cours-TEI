@@ -106,18 +106,22 @@ Autrement dit, les balises ne peuvent pas se "chevaucher".
 Un document XML représente syntaxiquement un arbre.
 > TODO: dessiner l’arbre du document
 
-## <span style="color:orange">Exercice – Écrire un premier document XML</span>
-> Baliser la première page du *Misanthrope*
-> * De quels éléments et attributs avons-nous besoin pour encoder le début de cette scène ?
-> * Comment ces éléments vont-ils s’imbriquer ?
+## <span style="color:orange">Exercice 1. Écrire un premier document XML</span>
+> Baliser cette première page du *Misanthrope*
+> * Lister les éléments et les attributs utiles pour encoder le début de cette scène ?  
+> **NB.** Nous faisons le **choix de représenter la structure sémantique** (acte, scène, etc.) plutôt que la structure matérielle de la page (marge, espacement, lignes de séparation, etc.).
+> * Enrichir la transcription texte brut ([misanthrope.txt](./docs/misanthrope.txt)) avec les balises définies pour contruire le fichier XML.  
+> **NB.** N’oubliez pas la déclaration XML en tête de fichier.  
+> **NB.** Pensez à indenter votre fichier.
 
 ![Première page du Misanthrope](./img/misanthrope.png)
 
-## <span style="color:orange">Exercice – Conformité XML</span>
-> Ouvrir le fichier dans Atom (ou Oxygen XML Editor).  
-> Faire des erreurs de syntaxe.  
-> Comprendre ce qu’est un fichier bien formé.
+### Exercice 1. Correction
+**Éléments** retenus (en cours) : `piece`, `acte`, `scene`, `titre`, `casting` (la liste des personnages de la scène), `tourDeParole`, `didascalie`, `vers`.
 
+**Attributs** retenus (en cours) : `@aligner` (pour décrire l’alignement de certains vers, éventuellement des tours de parole), `@xml:lang` (préciser la langue de la pièce).
+
+**Premier fichier XML**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <piece xml:lang="fr">
@@ -126,7 +130,7 @@ Un document XML représente syntaxiquement un arbre.
     <titre>ACTE PREMIER</titre>
     <scene>
       <titre>SCÈNE 1.</titre>
-      <personnages>PHILINTE, ALCESTE</personnages>
+      <casting>PHILINTE, ALCESTE</casting>
       <tourDeParole>PHILINTE.</tourDeParole>
       <vers>Qu'est-ce donc? qu'avez-vous ?</vers>
       <tourDeParole>ALCESTE<didascalie>, assis</didascalie>.</tourDeParole>
@@ -151,6 +155,12 @@ Un document XML représente syntaxiquement un arbre.
 </piece>
 ```
 
+## <span style="color:orange">Exercice 2. Conformité XML</span>
+> * Ouvrir ce premier fichier XML ([misanthrope.xml](./docs/misanthrope.xml)) dans Atom (ou Oxygen XML Editor).
+> * Faire des erreurs de syntaxe (élément mal refermé, valeur d’attribut hors *double quotes*, etc.).
+> * **Lire les message d’erreur** de `Jing` (`Linter`) et…
+> * **…comprendre ce qu’est un fichier bien formé.**
+
 # VALIDITÉ XML
 
 XML ne propose pas de balises prédéfinies. La structure d’un document doit être spécifiée :
@@ -162,18 +172,15 @@ Langages de schéma
 * [Relax-NG](https://fr.wikipedia.org/wiki/Relax_NG)
 * XML Schéma (XSD), Schematron, ODD...
 
-## <span style="color:orange">Exercice – Schéma et validité XML</span>
-> Rédiger un petit paragraphe libre pour spécifier le schéma que nous avons défini intuitivement pour notre scène.
-> * formaliser une DTD ;
-> * ajouter cette DTD à notre transcription ;
-> * modifier le nom / la casse d’un élément ;
-> * ajouter une scène, un acte ;
-> * quels bénéfices tirons-nous de la validation ?
-> * Pouvons-nous échanger nos fichiers ?
+## <span style="color:orange">Exercice 3. Schéma et validité XML</span>
+> * Pour chaque élément retenu pour la transcription du *Misanthrope*, définir en une petite phrase les règles d’imbrications avec les autres éléments.
+> * Formaliser une DTD.
 
+### Exercice 3. Correction
+** Définition du schéma (documentation)**
 * `piece` : élément racine ; une `piece` contient d’**abord** ***un*** `titre` **puis** ***des*** `acte`(s).
 * `acte` : un `acte` contient d’**abord** ***un*** `titre` **puis** ***des*** `scene`(s).
-* `scene` : une `scene` contient d’**abord** ***un*** `titre`, **puis** ***un*** `casting`, **suivis** de ***plusieurs groupes*** composés d’un `tourDeParole`, suivi d’un ou plusieurs `vers`.
+* `scene` : une `scene` contient d’**abord** ***un*** `titre`, **puis** ***un*** `casting`, **suivis** de ***plusieurs groupes*** composés d’un `tourDeParole` suivi d’un ou plusieurs `vers`.
 * `titre` : du texte.
 * `casting` : du texte.
 * `tourDeParole` : du texte **mêlé** ***éventuellement avec une*** `didascalie`.
@@ -181,13 +188,13 @@ Langages de schéma
 * `vers` : `@aligner`, du texte.
 * `@aligner`: décrire éventuellement l’alignement.
 
-
+** Définition du schéma (DTD)**
 ```dtd
 <!DOCTYPE piece [
   <!ELEMENT piece (titre, acte+)><!-- Une pièce contient un titre puis des actes. -->
   <!ATTLIST piece xml:lang CDATA #REQUIRED><!-- Une pièce a un attribut langue. -->
   <!ELEMENT acte (titre, scene+)><!-- Un acte contient un titre puis des scènes. -->
-  <!ELEMENT scene (titre, casting, (tourDeParole, vers+)+)><!-- Une scène contient d’abord un titre, puis un casting, suivis de plusieurs groupes composés d’un tourDeParole, suivi d’un ou plusieurs vers. -->
+  <!ELEMENT scene (titre, casting, (tourDeParole, vers+)+)><!-- Une scène contient d’abord un titre, puis un casting, suivis de plusieurs groupes composés d’un tourDeParole suivi d’un ou plusieurs vers. -->
   <!ELEMENT titre (#PCDATA)><!-- Du texte (Parsed Character Data). -->
   <!ELEMENT casting (#PCDATA)><!-- Du texte. -->
   <!ELEMENT tourDeParole (#PCDATA | didascalie)*><!-- Du texte mêlé éventuellement avec une didascalie. -->
@@ -196,3 +203,11 @@ Langages de schéma
   <!ATTLIST vers aligner (droite|centre) #IMPLIED><!-- Décrire éventuellement l’alignement. -->
 ]>
 ```
+## <span style="color:orange">Exercice 4. Validité XML</span>
+> * Copier/coller cette DTD en tête du fichier `misanthrope.xml` ([misanthrope-DTD.xml](./docs/misanthrope-DTD.xml)).
+> * Faire des erreurs de schémé (modifier le nom d’un élément, placer un `titre` là où ce n’est pas prévu, etc.).
+> * **Lire les message d’erreur** de `Jing` (`Linter`) et…
+> * **…comprendre ce qu’est un fichier valide.**
+> * Ajouter une scène, un acte : quels bénéfices tirons-nous de la validation ?
+
+Problème : pouvons-nous échanger nos fichiers (avec des collègues allemands par exemple) ?
