@@ -106,6 +106,18 @@ Documenter pour rendre ces choix lisibles et réexploitables par un groupe plus
 * Repérer la documentation sur l’encodage des textes dramatiques (théâtre).
 * Identifier (lister) les éléments et attributs utiles pour l’encodage de notre première page du *Misanthrope*.
 
+**Corrigé** : Documentation in [3.12.1 Core Tags for Verse 3](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/CO.html#CODV), [7 Performance Texts](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html), [Verse](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/VE.html)
+* `<piece>` => [`<>`]()
+* `<acte>` => [`<>`]()
+* `<scene>` => [`<>`]()
+* `<titre>` => [`<head>`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-head.html)
+* `<casting>` => [`<>`]()
+* `<tourDeParole>` => [`<>`]()
+* `<didascalie>` => [`<stage>`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-stage.html)
+* `<vers>` => [`<l>`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-l.html), [`<lg>`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-lg.html)
+* `@aligner` => [`@`]()
+* `@xml:lang` => [`@`]()
+
 # TEI, un format pivot pour les éditions académiques ?
 TODO
 ––IMAGE––  
