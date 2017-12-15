@@ -1,13 +1,10 @@
 XML – introduction
 ===
 
-Pour les exercices, on utilise l’éditeur [Atom](https://atom.io/).
-* linter-autocomplete-jing
-* linter-ui-default
-
-Installer
+Pour les exercices, on utilise l’éditeur [Atom](https://atom.io/).  
+Installer les packages (`Preferences… > Install > Install Packages`) :
 * `linter` (avec ses dépendances: `linter-ui-default`, avec ses dépendances: `intentions`, `busy-signal`)
-* pour autocomplétion, pas top: `linter-autocomplete-jing`
+* `linter-autocomplete-jing` (pour autocomplétion)
 
 
 # eXtensible Markup Language
@@ -29,7 +26,7 @@ que doit être un document **bien formé** et **valide**.
 <document xmlns="URI/de/mon/espace-de-nom">
   <métadonnées>
     <auteur>Vincent</auteur>
-    <date when="2017-11">novembre 2017</date>
+    <date when="2017">2017</date>
     <titre>Du texte brut aux balises</titre>
   </métadonnées>
   <texte>
@@ -59,7 +56,8 @@ que doit être un document **bien formé** et **valide**.
 
 **Syntaxe**
 * Les noms des balises **doivent** commencer par une lettre ou "`_`", les caractères suivants peuvent être des chiffres, des lettres, "`_`", "`.`" ou "`-`".
-* **La casse est signifiante**. Les balises peuvent être en majuscules ou en minuscules (ou les deux) : les balises `<titre>`, `<Titre>` et `<TITRE>` ne sont pas les mêmes.
+* **La casse est signifiante**. Les balises peuvent être en majuscules ou en minuscules (ou les deux) :  
+les balises `<titre>`, `<Titre>` et `<TITRE>` ne sont pas les mêmes.
 
 **Nœud de type texte** : “Première partie”
 
@@ -87,7 +85,8 @@ Si une balise est **vide** (si elle ne contient pas de texte), elle peut être s
 
 ### Imbrication
 **Les balises doivent-être imbriquées** : une balise ouverte ne peut pas être fermée tant que toutes les balises incluses dedans n’ont pas été fermées.  
-Autrement dit, les balises ne peuvent pas se "chevaucher".  
+Autrement dit, les balises ne peuvent pas se "chevaucher".
+
 **NON CONFORME (PAS BIEN) :**
 ```xml
 <a>
@@ -108,16 +107,16 @@ Un document XML représente syntaxiquement un arbre.
 > TODO: dessiner l’arbre du document
 
 ## <span style="color:orange">Exercice – Écrire un premier document XML</span>
->Baliser la première page du Misanthrope
-* De quels éléments avons-nous besoin pour encoder le début de cette scène ?
-* Comment ces éléments vont-ils s’imbriquer ?
+> Baliser la première page du *Misanthrope*
+> * De quels éléments et attributs avons-nous besoin pour encoder le début de cette scène ?
+> * Comment ces éléments vont-ils s’imbriquer ?
 
 ![Première page du Misanthrope](./img/misanthrope.png)
 
 ## <span style="color:orange">Exercice – Conformité XML</span>
-> Ouvrir le fichier dans Oxygen.  
-Faire des erreurs de syntaxe.  
-Comprendre ce qu’est un fichier bien formé.
+> Ouvrir le fichier dans Atom (ou Oxygen XML Editor).  
+> Faire des erreurs de syntaxe.  
+> Comprendre ce qu’est un fichier bien formé.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -152,7 +151,6 @@ Comprendre ce qu’est un fichier bien formé.
 </piece>
 ```
 
-
 # VALIDITÉ XML
 
 XML ne propose pas de balises prédéfinies. La structure d’un document doit être spécifiée :
@@ -165,38 +163,36 @@ Langages de schéma
 * XML Schéma (XSD), Schematron, ODD...
 
 ## <span style="color:orange">Exercice – Schéma et validité XML</span>
-Rédiger un petit paragraphe libre pour spécifier le schéma que nous avons défini intuitivement pour notre scène.
-* formaliser une DTD ;
-* ajouter cette DTD à notre transcription ;
-* modifier le nom / la casse d’un élément ;
-* ajouter une scène, un acte ;
-* quels bénéfices tirons-nous de la validation ?
-* Pouvons-nous échanger nos fichiers ?
+> Rédiger un petit paragraphe libre pour spécifier le schéma que nous avons défini intuitivement pour notre scène.
+> * formaliser une DTD ;
+> * ajouter cette DTD à notre transcription ;
+> * modifier le nom / la casse d’un élément ;
+> * ajouter une scène, un acte ;
+> * quels bénéfices tirons-nous de la validation ?
+> * Pouvons-nous échanger nos fichiers ?
 
-<!--
-piece : élément racine ; un titre puis des actes
-acte : un titre puis des scènes
-scene : un titre, un casting suivis de plusieurs groupes (tours de parole, 1 ou plusieurs vers)
-titre : du texte
-casting : du texte
-tourDeParole : du texte mêlé éventuellement avec une didascalie
-didascalie : du texte
-vers : @aligner, du texte
-@aligner: décrire l’alignement
--->
+* `piece` : élément racine ; une `piece` contient d’**abord** ***un*** `titre` **puis** ***des*** `acte`(s).
+* `acte` : un `acte` contient d’**abord** ***un*** `titre` **puis** ***des*** `scene`(s).
+* `scene` : une `scene` contient d’**abord** ***un*** `titre`, **puis** ***un*** `casting`, **suivis** de ***plusieurs groupes*** composés d’un `tourDeParole`, suivi d’un ou plusieurs `vers`.
+* `titre` : du texte.
+* `casting` : du texte.
+* `tourDeParole` : du texte **mêlé** ***éventuellement avec une*** `didascalie`.
+* `didascalie` : du texte.
+* `vers` : `@aligner`, du texte.
+* `@aligner`: décrire éventuellement l’alignement.
 
 
-```xml
+```dtd
 <!DOCTYPE piece [
-  <!ELEMENT piece (titre, acte+)><!-- Une pièce a un titre, un ou plusieurs actes. -->
+  <!ELEMENT piece (titre, acte+)><!-- Une pièce contient un titre puis des actes. -->
   <!ATTLIST piece xml:lang CDATA #REQUIRED><!-- Une pièce a un attribut langue. -->
-  <!ELEMENT acte (titre, scene+)><!-- Un acte a un titre, une ou plusieurs scènes. -->
-  <!ELEMENT scene (titre, casting, (tourDeParole, vers+)+)><!-- Une scène a un titre, zéro à plusieurs personnages, des vers, des tours de paroles, et ce, à l’infini. -->
-  <!ELEMENT titre (#PCDATA)><!-- Le titre, c’est du texte (Parsed Character Data). -->
-  <!ELEMENT casting (#PCDATA)><!-- Le personnage, c’est du texte. -->
-  <!ELEMENT tourDeParole (#PCDATA | didascalie)*><!-- Le tour de parole, c’est du texte ou un élément didascalie. -->
-  <!ELEMENT didascalie (#PCDATA)><!-- Une didascalie c’est du texte. -->
-  <!ELEMENT vers (#PCDATA)><!-- Un vers, c’est du texte -->
-  <!ATTLIST vers aligner (droite|centre) #IMPLIED><!-- On peut spécifier l’alignement d’un vers, sinon, c’est implicite. -->
+  <!ELEMENT acte (titre, scene+)><!-- Un acte contient un titre puis des scènes. -->
+  <!ELEMENT scene (titre, casting, (tourDeParole, vers+)+)><!-- Une scène contient d’abord un titre, puis un casting, suivis de plusieurs groupes composés d’un tourDeParole, suivi d’un ou plusieurs vers. -->
+  <!ELEMENT titre (#PCDATA)><!-- Du texte (Parsed Character Data). -->
+  <!ELEMENT casting (#PCDATA)><!-- Du texte. -->
+  <!ELEMENT tourDeParole (#PCDATA | didascalie)*><!-- Du texte mêlé éventuellement avec une didascalie. -->
+  <!ELEMENT didascalie (#PCDATA)><!-- Du texte. -->
+  <!ELEMENT vers (#PCDATA)><!-- Du texte -->
+  <!ATTLIST vers aligner (droite|centre) #IMPLIED><!-- Décrire éventuellement l’alignement. -->
 ]>
 ```
