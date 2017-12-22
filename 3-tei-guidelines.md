@@ -111,17 +111,81 @@ Documenter pour rendre ces choix lisibles et réexploitables par un groupe plus
 * **Aide.** [Structure minimale d’un document TEI P5 valide](./docs/teiAll-empty.xml) (vous permettra d’insérer conformément votre transcription et de réfléchir à la question des métadonnées).
 
 **[Début du] Corrigé – à compléter avec les élèves** : Documentation in [3.12.1 Core Tags for Verse 3](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/CO.html#CODV), [7 Performance Texts](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html), [Verse](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/VE.html)
-* `<piece>` => [`<>`]()
-* `<acte>` => [`<>`]()
-* `<scene>` => [`<>`]()
+* `<piece>` => [`<TEI>`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-TEI.html) ([4 Default Text Structure](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/DS.html))
+* `<acte>` => [`<div type="act" n="1">`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-div.html)
+* `<scene>` => [`<div type="scene" n="1">`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-div.html)
 * `<titre>` => [`<head>`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-head.html)
-* `<casting>` => [`<>`]()
-* `<tourDeParole>` => [`<>`]()
+* `<casting>` => [`<stage>`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-stage.html)
+* `<tourDeParole>` => [`sp[@who]/speaker`]()
 * `<didascalie>` => [`<stage>`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-stage.html)
-* `<vers>` => [`<l>`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-l.html), [`<lg>`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-lg.html)
-* `@aligner` => [`@`]()
-* `@xml:lang` => [`@`]()
+* `<vers>` => [`<l>`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-l.html), [`<lg>`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-lg.html) ?
+* `@aligner` => [`@rend`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-att.global.rendition.html), [`@part`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-att.fragmentable.html)
+* `@xml:lang` => [`@xml:lang`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-att.global.html)
 
+```xml
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="fr">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Title</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Publication Information</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Information about the source</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <head rend="uc">Le misanthrophe</head>
+      <div xml:id="I" type="act">
+        <head>Acte Premier</head>
+        <div type="scene" xml:id="I01">
+          <head>Scène Première</head>
+          <stage>Philinte, Alceste</stage>
+          <sp who="philinte" xml:id="I01-1">
+            <speaker>Philinte</speaker>
+            <l n="1" xml:id="l1" part="I">Qu’est-ce donc ? qu’avez-vous ?</l>
+          </sp>
+          <sp who="alceste" xml:id="I01-2">
+            <speaker>Alceste</speaker>
+            <l part="F">Laissez-moi, je vous prie.</l>
+          </sp>
+          <sp who="philinte" xml:id="I01-3">
+            <speaker>Philinte</speaker>
+            <l n="2" xml:id="l2">Mais, encor, dites-moi, quelle bizarrerie...</l>
+          </sp>
+          <sp who="alceste" xml:id="I01-4">
+            <speaker>Alceste</speaker>
+            <l n="3" xml:id="l3">Laissez-moi là, vous dis-je, et courez vous cacher.</l>
+          </sp>
+          <sp who="philinte" xml:id="I01-5">
+            <speaker>Philinte</speaker>
+            <l n="4" xml:id="l4">Mais on entend les Gens, au moins, sans se fâcher.</l>
+          </sp>
+          <sp who="alceste" xml:id="I01-6">
+            <speaker>Alceste</speaker>
+            <l n="5" xml:id="l5">Moi, je veux me fâcher, et ne veux point entendre.</l>
+          </sp>
+          <sp who="philinte" xml:id="I01-7">
+            <speaker>Philinte</speaker>
+            <l n="6" xml:id="l6">Dans vos brusques chagrins, je ne puis vous comprendre ;</l>
+            <l n="7" xml:id="l7">Et quoique amis, enfin, je suis tout des premiers...</l>
+          </sp>
+          <sp who="alceste" xml:id="I01-8">
+            <speaker>Alceste</speaker>
+            <l n="8" xml:id="l8">Moi, votre ami ? rayez cela de vos papiers.</l>
+            <l n="9" xml:id="l9">J’ai fait jusques ici, profession de l’être ;</l>
+            <l n="10" xml:id="l10">Mais après ce qu’en vous, je viens de voir paraître,</l>
+          </sp>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>
+```
 # TEI, un format pivot pour les éditions académiques ?
 TODO
 ––IMAGE––  
