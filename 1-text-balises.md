@@ -189,14 +189,14 @@ Viersélin Tigoboth aperçut sur le bord de la route une jeune femme brune, form
 
 # <span style="color:orange">Exercice – Balises et modèles éditoriaux</span>
 >Comparer les fichiers balisés (sémantique et modèle documentaire) :
-  * Markdown : apollinaire.md
-  * LaTeX : apollinaire.tex
-  * DocBook : apollinaire_db.xml
-  * HTML5 : apollinaire.html
-  * XML/TEI : apollinaire_tei.xml
+>  * Markdown : [apollinaire.md](https://github.com/architexte/cours-TEI/blob/master/docs/apollinaire.md)
+>  * LaTeX : [apollinaire.tex](https://github.com/architexte/cours-TEI/blob/master/docs/apollinaire.tex)
+>  * DocBook : [apollinaire_db.xml](https://github.com/architexte/cours-TEI/blob/master/docs/apollinaire_db.xml)
+>  * HTML5 : [apollinaire.html](https://github.com/architexte/cours-TEI/blob/master/docs/apollinaire.html)
+>  * XML/TEI : [apollinaire_tei.xml](https://github.com/architexte/cours-TEI/blob/master/docs/apollinaire.html)
 
 > Regrouper les fichiers par "famille" de balises.  
-Structuration visuelle ou sémantique ?  
-Quel usage (comment lire les fichiers) ?  
-Des équivalences entre balises ?  
-Forces et faiblesses de chaque balisage ?
+> * Structuration visuelle ou sémantique ?  
+> * Quel usage (comment lire les fichiers) ?  
+> * Des équivalences entre balises ?  
+> * Forces et faiblesses de chaque balisage ?
