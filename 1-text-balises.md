@@ -144,8 +144,8 @@ Viersélin Tigoboth aperçut sur le bord de la route une jeune femme brune, form
 * Texte brut : `qui signifie parce que`
 * Résultat attendu : « qui signifie *parce que* »
 * Balises :
-  * qui signifie `<i>parce que</i>` (HTML5)
-  * qui signifie `*parce que*` (Markdown)
+  * `qui signifie <i>parce que</i>` (HTML5)
+  * `qui signifie *parce que*` (Markdown)
 
 # Des balises
 
@@ -155,7 +155,7 @@ Viersélin Tigoboth aperçut sur le bord de la route une jeune femme brune, form
 |[wikicode](https://fr.wikipedia.org/wiki/Aide:Syntaxe#Forme_du_texte)|`balisage ''ad hoc'' pour l’italique.`|
 |[LaTeX](http://www.tuteurs.ens.fr/logiciels/latex/manuel.html#s3_6)|`balisage \emph{ad hoc} pour l’italique.`|
 |[DocBook](http://tdg.docbook.org/tdg/4.5/emphasis.html)|`balisage <emphasis>ad hoc</emphasis> pour l’italique.`|
-|[HTML5](https://www.w3.org/TR/html5/text-level-semantics.html#the-i-element)|`balisage <i>ad hoc</i> pour l’italique.`|
+|[HTML5](https://www.w3.org/TR/html5/textlevel-semantics.html#the-i-element)|`balisage <i>ad hoc</i> pour l’italique.`|
 |XML|`balisage <italique>ad hoc</italique> pour l’italique.`|
 |XML|`?`|
 |[TEI](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-hi.html)|`balisage <hi rend="i">ad hoc</hi> pour l’italique.`|
@@ -170,7 +170,7 @@ Viersélin Tigoboth aperçut sur le bord de la route une jeune femme brune, form
 |[Markdown](http://spec.commonmark.org/0.28/#emphasis-and-strong-emphasis)|`` *ad hoc* ``|"Markdown treats asterisks (*) and underscores (_) as indicators of emphasis."|
 |[wikicode](https://fr.wikipedia.org/wiki/Aide:Syntaxe#Forme_du_texte)|`balisage ''ad hoc'' pour l’italique.`|"Il est possible de mettre le texte en gras, en italique, etc., pour mettre en valeur les informations d'un texte ou pour écrire le titre d'une œuvre selon les conventions (par exemple, un titre de film doit être en italique)."|
 |[LaTeX](http://www.tuteurs.ens.fr/logiciels/latex/manuel.html#s3_6)|`\emph{ad hoc}`|"…pour mettre en valeur certains mots, les titres d'ouvrages en particulier."|
-|[HTML5](https://www.w3.org/TR/html5/text-level-semantics.html#the-i-element)|`balisage <i>ad hoc</i> pour l’italique.`|"The `i` element represents a span of text in an alternate voice or mood, or otherwise offset from the normal prose in a manner indicating a different quality of text, such as a taxonomic designation, a technical term, an idiomatic phrase from another language, transliteration, a thought, or a ship name in Western texts."|
+|[HTML5](https://www.w3.org/TR/html5/textlevel-semantics.html#the-i-element)|`balisage <i>ad hoc</i> pour l’italique.`|"The `i` element represents a span of text in an alternate voice or mood, or otherwise offset from the normal prose in a manner indicating a different quality of text, such as a taxonomic designation, a technical term, an idiomatic phrase from another language, transliteration, a thought, or a ship name in Western texts."|
 |[TEI](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-hi.html)|`balisage <hi rend="i">ad hoc</hi> pour l’italique.`|"`<hi>` distingue un mot ou une expression comme graphiquement distincte du texte environnant, sans en donner la raison."|
 
 ## 2/2. Balisage sémantique
