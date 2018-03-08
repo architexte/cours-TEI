@@ -5,13 +5,13 @@ Du texte brut aux balises
 * [Text brut (*plain text*)](https://fr.wikipedia.org/wiki/Texte_brut) = une chaîne de caractères : “bonjour” / “Bonjour” / “BONJOUR”
 * Texte enrichi (*fancy text*) = le texte de nos traitements de textes  
 Texte + mise en forme (à l’affichage) :
-  * Bonjour / **bonjour** / *bonjour* / Bonjour / <sup>bonjour</sup>
+  * Bonjour / **bonjour** / *bonjour* / BONJOUR / <sup>bonjour</sup>
 
-Le **standard Unicode** définit le texte brut.
+Le [**standard Unicode**](https://fr.wikipedia.org/wiki/Unicode) définit le texte brut (énoncé pas tout à fait exact…).
 
 Le texte brut représente **le contenu basique, échangeable et interopérable du texte**.
 
-Le texte brut représente **seulement les caractères contenus, sans leur apparence** (ceci signifie que seule une numérotation des caractère est utilisée, la police de caractères étant fournie par un mécanisme indépendant).
+Le texte brut représente **seulement les caractères contenus, sans leur apparence** (ceci signifie que seule une numérotation des caractères est utilisée, la police de caractères étant fournie par un mécanisme indépendant).
 
 # Texte brut. Codage des caractères
 * [ASCII](https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange) (*American Standard Code for Information Interchange*)  
@@ -19,8 +19,8 @@ Les caractères latins non accentués (écrire en anglais)
 codés sur 7 bits. 2<sup>7</sup> = [128 possibilités](https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange#Table_des_128_caract.C3.A8res_ASCII).
 * [ISO 8859-1 (Latin 1)](https://fr.wikipedia.org/wiki/ISO/CEI_8859-1)  
 Les 191 caractères de l’alphabet latin ; conçu comme une extension de l’ASCII  
-codés sur 1 octet (8 bits). 28 = [? possibilités](https://fr.wikipedia.org/wiki/ISO/CEI_8859-1#ISO.2FCEI_8859-1_par_rapport_.C3.A0_ISO-8859-1).
-* [UTF-8](https://fr.wikipedia.org/wiki/UTF-8) (Universal Character Set Transformation Format - 8 bits)  
+codés sur 1 octet (8 bits). 2<sup>8</sup> = [? possibilités](https://fr.wikipedia.org/wiki/ISO/CEI_8859-1#ISO.2FCEI_8859-1_par_rapport_.C3.A0_ISO-8859-1).
+* [UTF-8](https://fr.wikipedia.org/wiki/UTF-8) (*Universal Character Set Transformation Format* - 8 bits)  
 L’ensemble des caractères du « répertoire universel de caractères codés »  
 codés sur 1 à 4 octets (compatible Unicode et ASCII)  
 L’UTF-8 est utilisé par 86 % des sites web en 2016.
@@ -109,16 +109,16 @@ cycliste ! Et tenant d'une main son vélo, tandis
 
 # <span style="color:orange">Exercice – manipuler du texte brut</span>
 > * convertir apollinaire1.txt en UTF-8 ;
-* restructurer apollinaire1.txt en paragraphes (utiliser les regex ?) ;
-* cette structuration en paragraphe est-elle explicite ?
-* le texte reste-t-il le même ?
-* trouver une manière de caractériser (dans le fichier) les éléments éditoriaux :
-  * le titre principal
-  * les titres hiérarchiques
-  * les paragraphes
-  * la pagination
-  * la mise en valeur typographique (comment désambiguïser la sémantique de l’italique ?)
-  * ?
+> * restructurer apollinaire1.txt en paragraphes (utiliser les regex ?) ;
+> * cette structuration en paragraphe est-elle explicite ?
+> * le texte reste-t-il le même ?
+> * trouver une manière de caractériser (dans le fichier) les éléments éditoriaux :
+>  * le titre principal
+>  * les titres hiérarchiques
+>  * les paragraphes
+>  * la pagination
+>  * la mise en valeur typographique (comment désambiguïser la sémantique de l’italique ?)
+>  * ?
 
 > De quoi avons-nous besoin ?
 
