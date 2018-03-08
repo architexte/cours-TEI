@@ -113,13 +113,12 @@ cycliste ! Et tenant d'une main son vélo, tandis
 > * cette structuration en paragraphe est-elle explicite ?
 > * le texte reste-t-il le même ?
 > * trouver une manière de caractériser (dans le fichier) les éléments éditoriaux :
->  * le titre principal
->  * les titres hiérarchiques
->  * les paragraphes
->  * la pagination
->  * la mise en valeur typographique (comment désambiguïser la sémantique de l’italique ?)
->  * ?
-
+>     * le titre principal
+>     * les titres hiérarchiques
+>     * les paragraphes
+>     * la pagination
+>     * la mise en valeur typographique (comment désambiguïser la sémantique de l’italique ?)
+>     * ?
 > De quoi avons-nous besoin ?
 
 
