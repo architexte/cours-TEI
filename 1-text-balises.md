@@ -141,7 +141,7 @@ Viersélin Tigoboth aperçut sur le bord de la route une jeune femme brune, form
                <balise>contenu divers</balise>
 ```
 
-* Texte brut : « qui signifie parce que »
+* Texte brut : `qui signifie parce que`
 * Résultat attendu : « qui signifie *parce que* »
 * Balises :
   * qui signifie `<i>parce que</i>` (HTML5)
