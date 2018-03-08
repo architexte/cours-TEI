@@ -5,7 +5,7 @@ Du texte brut aux balises
 * [Text brut (*plain text*)](https://fr.wikipedia.org/wiki/Texte_brut) = une chaîne de caractères : “bonjour” / “Bonjour” / “BONJOUR”
 * Texte enrichi (*fancy text*) = le texte de nos traitements de textes  
 Texte + mise en forme (à l’affichage) :
-  * Bonjour / bonjour / bonjour / Bonjour / bonjour
+  * Bonjour / **bonjour** / *bonjour* / Bonjour / <big>bonjour</big>
 
 Le **standard Unicode** définit le texte brut.
 
