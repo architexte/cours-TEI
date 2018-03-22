@@ -193,7 +193,7 @@ Viersélin Tigoboth aperçut sur le bord de la route une jeune femme brune, form
 >  * LaTeX : [apollinaire.tex](https://github.com/architexte/cours-TEI/blob/master/docs/apollinaire.tex)
 >  * DocBook : [apollinaire_db.xml](https://github.com/architexte/cours-TEI/blob/master/docs/apollinaire_db.xml)
 >  * HTML5 : [apollinaire.html](https://github.com/architexte/cours-TEI/blob/master/docs/apollinaire.html)
->  * XML/TEI : [apollinaire_tei.xml](https://github.com/architexte/cours-TEI/blob/master/docs/apollinaire.html)
+>  * XML/TEI : [apollinaire_tei.xml](https://github.com/architexte/cours-TEI/blob/master/docs/apollinaire_tei.xml)
 
 > Regrouper les fichiers par "famille" de balises.  
 > * Structuration visuelle ou sémantique ?  

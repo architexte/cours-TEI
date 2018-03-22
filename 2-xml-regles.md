@@ -41,7 +41,6 @@ que doit être un document **bien formé** et **valide**.
     </partie>
   </texte>
 </document>
-<document>
 ```
 ## Balise, élément
 **Balise**
