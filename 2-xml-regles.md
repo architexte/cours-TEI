@@ -112,6 +112,32 @@ Un document XML représente syntaxiquement un arbre.
 > **NB.** N’oubliez pas la déclaration XML en tête de fichier.  
 > **NB.** Pensez à indenter votre fichier.
 
+```
+LE MISANTHROPE.
+ACTE PREMIER.
+SCÈNE 1.
+PHILINTE, ALCESTE
+PHILINTE.
+Qu'est-ce donc? qu'avez-vous ?
+ALCESTE, assis.
+Laissez-moi, je vous prie.
+PHILINTE.
+Mais encor, dites-moi, quelle bizarrerie....
+ALCESTE.
+Laissez-moi là, vous dis-je, et courez vous cacher.
+PHILINTE.
+Mais on entend les gens au moins sans se fâcher.
+ALCESTE.
+Moi, je veux me fâcher, et ne veux point entendre.
+PHILINTE
+Dans vos brusques chagrins je ne puis vous comprendre,
+Et quoique amis enfin, je suis tout des premiers....
+ALCESTE, se levant brusquement.
+Moi, votre ami? Rayez cela de vos papiers.
+J'ai fait jusques ici profession de l'être,
+Mais, après ce qu'en vous je viens de voir paraître,
+```
+
 ![Première page du Misanthrope](./img/misanthrope.png)
 
 ### Exercice 1. Correction
