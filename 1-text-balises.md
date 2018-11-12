@@ -50,6 +50,11 @@ L’UTF-8 est utilisé par 86 % des sites web en 2016.
 |`[a-z]{n,}`|au moins *n* occurrences de la classe `[a-z]`|quantificateur, obligatoire non restrictif|
 |`()`||capture de sous chaînes|
 
+# <span style="color:orange">Exercice – manipuler du texte brut</span>
+> [https://regex101.com/r/bZjdCw/1](https://regex101.com/r/bZjdCw/1)
+> 1. **Restructurer en paragraphes** (une ligne par paragraphe) la couche texte du PDF des premières pages [du *Poète assassiné* d’Apollinaire](https://github.com/architexte/cours-TEI/blob/master/docs/apollinaire.md).
+> 1. Poser les balises `<p>…</p>` pour structurer le texte en XML.
+
 ```txt
 Le Poète assassiné
 I
@@ -107,8 +112,21 @@ globes. Qu'elle était gracieuse en jupe courte de
 cycliste ! Et tenant d'une main son vélo, tandis
 ```
 
-# <span style="color:orange">Exercice – manipuler du texte brut</span>
-> * restructurer apollinaire1.txt en paragraphes (utiliser les regex ?) ;
+
+```txt
+Le Poète assassiné
+
+I. Renommée
+La gloire de Croniamantal est aujourd'hui universelle. Cent vingt-trois villes dans sept pays sur quatre continents se disputent l'honneur d'avoir vu naître ce héros insigne. J'essayerai plus loin d'élucider cette importante question.
+Tous ces peuples ont plus ou moins modifié le nom sonore de Croniamantal. Les Arabes, les Turcs et autres peuples qui lisent de droite à gauche n'ont pas manqué de le prononcer Latnamaïnorc, mais les Turcs l'appellent bizarrement Pata, ce qui signifie oie ou organe viril, à volonté. Les Russes le surnomment Viperdoc, c'est-à-dire né d'un pet ; on verra plus loin la raison de ce sobriquet. Les Scandinaves, ou du moins les Dalécarliens, l'appellent volontiers quoniam, en latin, qui signifie parce que, mais désigne souvent les parties nobles dans les récits populaires du moyen âge. On voit que les Saxons et les Turcs manifestent à l'égard de Croniamantal le même sentiment en lui appliquant des surnoms identiques, mais dont l'origine est encore mal expliquée. On suppose que c'est une allusion euphémique à ce qui se trouvait dans le rapport médical du médecin marseillais Ratiboul sur la mort de Croniamantal. D'après cette pièce officielle, tous les organes de Croniamantal étaient sains et le médecin légiste ajoutait en latin, comme fit l'aide-major Henry pour Napoléon : partes viriles exiguitatis insignis, sicut pueri.
+Au demeurant, il est des pays où la notion de la virilité croniamantalesque a complètement disparu. C'est ainsi qu'en Moriane les nègres le nomment Tsatsa ou Dzadza ou Rsoussour, noms féminins, car ils ont féminisé Croniamantal comme les Byzantins ont féminisé le vendredi saint en en faisant sainte Parascève.
+
+II. Procréation
+A deux lieues de Spa, sur la route bordée d'arbres tordus et de buissons, Viersélin Tigoboth, musicien ambulant qui arrivait à pied de Liége, battait le briquet pour allumer sa pipe. Une voix de femme cria : « Eh ! monsieur ! »
+Il leva la tête et un rire éperdu éclata : « Hahaha ! Hohoho ! Hihihi ! tes paupières ont la couleur des lentilles d'Egypte ! Je m'appelle Macarée. Je veux un matou. »
+Viersélin Tigoboth aperçut sur le bord de la route une jeune femme brune, formée de jolis globes. Qu'elle était gracieuse en jupe courte de cycliste ! Et tenant d'une main son vélo, tandis
+```
+
 > * cette structuration en paragraphe est-elle explicite ?
 > * le texte reste-t-il le même ?
 > * trouver une manière de caractériser (dans le fichier) les éléments éditoriaux :
@@ -119,21 +137,24 @@ cycliste ! Et tenant d'une main son vélo, tandis
 >     * la mise en valeur typographique (comment désambiguïser la sémantique de l’italique ?)
 >     * ?
 
-```txt
-Le Poète assassiné
-
-I. Renommée
-La gloire de Croniamantal est aujourd'hui universelle. Cent vingt-trois villes dans sept pays sur quatre continents se disputent l'honneur d'avoir vu naître ce héros insigne. J'essayerai plus loin d'élucider cette importante question.
-Tous ces peuples ont plus ou moins modifié le nom sonore de Croniamantal. Les Arabes, les Turcs et autres peuples qui lisent de droite à gauche n'ont pas manqué de le prononcer Latnamaïnorc, mais les Turcs l'appellent bizarrement Pata, ce qui signifie oie ou organe viril, à volonté. Les Russes le surnomment Viperdoc, c'est-à-dire né d'un pet ; on verra plus loin la raison de ce sobriquet. Les
-Scandinaves, ou du moins les Dalécarliens, l'appellent volontiers quoniam, en latin, qui signifie parce que, mais désigne souvent les parties nobles dans les récits populaires du moyen âge. On voit que les Saxons et les Turcs manifestent à l'égard de Croniamantal le même sentiment en lui appliquant des surnoms identiques, mais dont l'origine est encore mal expliquée. On suppose que c'est une allusion euphémique à ce qui se trouvait dans le rapport médical du médecin marseillais Ratiboul sur la mort de Croniamantal. D'après cette pièce officielle, tous les organes de Croniamantal étaient sains et le médecin légiste ajoutait en latin, comme fit l'aide-major Henry pour Napoléon : partes viriles exiguitatis insignis, sicut pueri.
-Au demeurant, il est des pays où la notion de la virilité croniamantalesque a complètement disparu. C'est ainsi qu'en Moriane les nègres le nomment Tsatsa ou Dzadza ou Rsoussour, noms féminins, car ils ont féminisé Croniamantal comme les Byzantins ont féminisé le vendredi saint en en faisant sainte Parascève.
-
-II. Procréation
-A deux lieues de Spa, sur la route bordée d'arbres tordus et de buissons, Viersélin Tigoboth, musicien ambulant qui arrivait à pied de Liége, battait le briquet pour allumer sa pipe. Une voix de femme cria : « Eh ! monsieur ! »
-Il leva la tête et un rire éperdu éclata : « Hahaha ! Hohoho ! Hihihi ! tes paupières ont la couleur des lentilles d'Egypte ! Je m'appelle
-Macarée. Je veux un matou. »
-Viersélin Tigoboth aperçut sur le bord de la route une jeune femme brune, formée de jolis globes. Qu'elle était gracieuse en jupe courte de cycliste ! Et tenant d'une main son vélo, tandis
+```xml
+<body>
+  <head>Le Poète assassiné</head>
+  <div>
+    <head>I. Renommée</head>
+    <p>La gloire de Croniamantal est aujourd'hui universelle. Cent vingt-trois villes dans sept pays sur quatre continents se disputent l'honneur d'avoir vu naître ce héros insigne. J'essayerai plus loin d'élucider cette importante question.</p>
+    <p>Tous ces peuples ont plus ou moins modifié le nom sonore de Croniamantal. Les Arabes, les Turcs et autres peuples qui lisent de droite à gauche n'ont pas manqué de le prononcer Latnamaïnorc, mais les Turcs l'appellent bizarrement Pata, ce qui signifie oie ou organe viril, à volonté. Les Russes le surnomment Viperdoc, c'est-à-dire né d'un pet ; on verra plus loin la raison de ce sobriquet. Les Scandinaves, ou du moins les Dalécarliens, l'appellent volontiers quoniam, en latin, qui signifie parce que, mais désigne souvent les parties nobles dans les récits populaires du moyen âge. On voit que les Saxons et les Turcs manifestent à l'égard de Croniamantal le même sentiment en lui appliquant des surnoms identiques, mais dont l'origine est encore mal expliquée. On suppose que c'est une allusion euphémique à ce qui se trouvait dans le rapport médical du médecin marseillais Ratiboul sur la mort de Croniamantal. D'après cette pièce officielle, tous les organes de Croniamantal étaient sains et le médecin légiste ajoutait en latin, comme fit l'aide-major Henry pour Napoléon : partes viriles exiguitatis insignis, sicut pueri.</p>
+    <p>Au demeurant, il est des pays où la notion de la virilité croniamantalesque a complètement disparu. C'est ainsi qu'en Moriane les nègres le nomment Tsatsa ou Dzadza ou Rsoussour, noms féminins, car ils ont féminisé Croniamantal comme les Byzantins ont féminisé le vendredi saint en en faisant sainte Parascève.</p>
+  </div>
+  <div>
+    <head>II. Procréation</head>
+    <p>A deux lieues de Spa, sur la route bordée d'arbres tordus et de buissons, Viersélin Tigoboth, musicien ambulant qui arrivait à pied de Liége, battait le briquet pour allumer sa pipe. Une voix de femme cria : « Eh ! monsieur ! »</p>
+    <p>Il leva la tête et un rire éperdu éclata : « Hahaha ! Hohoho ! Hihihi ! tes paupières ont la couleur des lentilles d'Egypte ! Je m'appelle Macarée. Je veux un matou. »</p>
+    <p>Viersélin Tigoboth aperçut sur le bord de la route une jeune femme brune, formée de jolis globes. Qu'elle était gracieuse en jupe courte de cycliste ! Et tenant d'une main son vélo, tandis</p>
+</body>
 ```
+
+
 
 # Langages à balises (*Markup Languages*)
 ```
