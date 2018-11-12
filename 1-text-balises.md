@@ -42,6 +42,8 @@ L’UTF-8 est utilisé par 86 % des sites web en 2016.
 |`d[eu]`|toutes les occurrences de “de” et de “du”|classe de caractères|
 |`[a-z]`|“a”, ou “b”, ou “c”, ..., ou “y”, ou “z”|intervalle (dans une classe)|
 |`[^a-z]`|n’importe quel caractère sauf “a”, ou “b”, ou “c”, ..., ou “z”|classe complémentée (tout caractère qui n’est pas énuméré)|
+|[`\w`](https://regex101.com/r/bZjdCw/2)|*Any word character*|classe de caractères|
+|[`\[[:punct:]]`](https://regex101.com/r/bZjdCw/3)|ponctuation|classe de caractères|
 |`s?`|zéro ou une occurrence de “s”|quantificateur, facultatif|
 |`[a-z]*`|une ou plusieurs occurrences de la classe [a-z]|quantificateur, facultatif|
 |`e+`|une ou plusieurs occurrences de “e”|quantificateur, obligatoire|
@@ -52,7 +54,7 @@ L’UTF-8 est utilisé par 86 % des sites web en 2016.
 
 # <span style="color:orange">Exercice – manipuler du texte brut</span>
 > [https://regex101.com/r/bZjdCw/1](https://regex101.com/r/bZjdCw/1)
-> 1. **Restructurer en paragraphes** (une ligne par paragraphe) la couche texte du PDF des premières pages [du *Poète assassiné* d’Apollinaire](https://github.com/architexte/cours-TEI/blob/master/docs/apollinaire.md).
+> 1. **Restructurer en paragraphes** (une ligne par paragraphe) la couche texte du PDF des premières pages [du *Poète assassiné* d’Apollinaire](https://github.com/architexte/cours-TEI/blob/master/docs/apollinaire_t.pdf).
 > 1. Poser les balises `<p>…</p>` pour structurer le texte en XML.
 
 ```txt
